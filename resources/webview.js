@@ -10,9 +10,9 @@ document.getElementById('button').addEventListener('click', function () {
   window.postMessage('nativeLog', 'Called from the webview', my_region, my_gender)
 })
 
-/*document.getElementById('region_select').addEventListener('change', function () {
-  console.log("Region changed to: " + this.value)
-})*/
+document.getElementById('region_select').addEventListener('onchange', function () {
+  console.log("Region changed to: ")
+})
 
 // called from the plugin
 window.setRandomNumber = function (randomNumber) {

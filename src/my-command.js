@@ -16,11 +16,22 @@ export function onShutdown () {
 
 export function onSupplyData (context) {
   let dataKey = context.data.key
+
+  var document = sketch.getSelectedDocument()
+  var selection = document.selectedLayers
+  const myLength = selection.length
   
-  const myLength = 5;//items.length;
+  /*log(selection.isEmpty)
+  log(selection.length)
+  selection.forEach(function(item) {
+    log(item.name)
+    log(item.name)
+  })*/
+
   getNames(context, myLength);
 }
 
+//HELPER FUNCTION TO GET REGION-SETTINGS
 function getRegion() {
   let tmp_region
   if (Settings.settingForKey('my_region') == undefined) {
@@ -32,6 +43,7 @@ function getRegion() {
   return tmp_region
 }
 
+//HELPER FUNCTION TO GET GENDER-SETTINGS
 function getGender() {
   let tmp_gender
   if (Settings.settingForKey('my_gender') == undefined) {
@@ -46,7 +58,7 @@ function getGender() {
 export function getNames(myContext, myAmount) {
   let tmp_gender = getGender()
   let tmp_region = getRegion()
-  console.log("OnSupplyData! - Values to look for: " + tmp_gender + ", " + tmp_region)
+  log("OnSupplyData! - Values to look for: " + tmp_gender + ", " + tmp_region)
 
   //let url = "https://uinames.com/api/?amount=" + myAmount + "&gender=" + myGender + "&region=" + myRegion;
   let url = "https://uinames.com/api/?amount=" + myAmount
@@ -66,17 +78,17 @@ export function getNames(myContext, myAmount) {
     .then(function(data) {
       let index = 0;
       return data.map(function(userName) {
-        console.log(userName);
+        log(userName);
         let name = (userName.name + " " + userName.surname)
         DataSupplier.supplyDataAtIndex(dataKey, name, index)
         index++
       })      
   })
   .catch(function(error) {
-    console.log(error);
+    log(error);
   });
 }
 
 export function onSettings(context) {
-  console.log("SETTINGS CALLED!!!")
+  log("SETTINGS CALLED!!!")
 }

@@ -39,7 +39,7 @@ export default function (context) {
       //console.log("Region: " + Settings.settingForKey('my_region'))
       //console.log("Gender: " + Settings.settingForKey('my_gender'))
       
-      //Populate plugin with previously values
+      //POPULATE PLUGIN WITH PREVIOUS VALUES
       webContents.executeJavaScript(`setDefaultValues("${Settings.settingForKey('my_region')}", "${Settings.settingForKey('my_gender')}")`)
       UI.message('UI loaded!')
     })
