@@ -13,9 +13,19 @@
           "SupplyData": "onSupplyData"
         }
       }
+    },
+    {
+      "name" : "Settings...",
+      "identifier" : "settings_identifier",
+      "shortcut" : "",
+      "script" : "ui.js",
+      "description" : "Lets the user customize localization parameters"
     }
   ],
   "menu": {
-    "title": "Jane_Doe"
+    "title": "Jane_Doe",
+    "items": [
+      "settings_identifier"
+    ]
   }
 }

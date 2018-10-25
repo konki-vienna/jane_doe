@@ -22,5 +22,8 @@
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
   },
-  "author": "Adi Berda and Konstantin Demblin <konstantin.demblin@gmail.com>"
+  "author": "Adi Berda and Konstantin Demblin <konstantin.demblin@gmail.com>",
+  "dependencies": {
+    "sketch-module-web-view": "^2.0.1"
+  }
 }

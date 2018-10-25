@@ -15,6 +15,7 @@ export function onShutdown () {
 
 export function onSupplyData (context) {
   let dataKey = context.data.key
+  
   const myLength = 5;//items.length;
   console.log("OnSupplyData!!!")
   getNames(context, myLength, "female", "Germany");
@@ -40,4 +41,8 @@ export function getNames(myContext, myAmount, myGender, myRegion) {
   .catch(function(error) {
     console.log(error);
   });
+}
+
+export function onSettings(context) {
+  console.log("SETTINGS CALLED!!!")
 }
