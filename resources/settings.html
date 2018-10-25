@@ -6,10 +6,38 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  Hello World!
+  Jane Doe - Settings
 
   <div>
-    <button id="button">Get a random number</button>
+      <form>
+        <div>
+          <label for="region">Pick nationality</label>
+          <select id="region_select">
+            <option value="random">Random</option>
+            <option value="austria">🇦🇹 Austria</option>
+            <option value="estonia">Estonia</option>
+            <option value="france">🇫🇷 France</option>
+            <option value="germany">🇩🇪 Germany</option>
+            <option value="greece"> Greece</option>
+            <option value="india"> India</option>
+            <option value="israel">🇮🇱 Israel</option>
+            <option value="korea"> Korea</option>
+            <option value="spain"> Spain</option>
+          </select>
+        </div>
+        <div></div>
+          <label for="gender">Choose gender</label>
+          <select id="gender_select">
+            <option value="female">👩 Female</option>
+            <option value="male">👨 Male</option>
+            <option value="both">👩👨 Female and Male</option>
+          </select>
+        </div>
+      </form>
+  </div>
+  
+  <div>
+    <button id="button">Save Settings</button>
   </div>
   <div id="answer"></div>
 
