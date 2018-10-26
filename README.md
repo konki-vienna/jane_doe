@@ -6,5 +6,10 @@ This Sketch Plugin enables you to use localized user names within your design fi
 ## How to use it
 - Download and install the plugin
 - Adapt the settings (region and gender) of the plugin through Plugins > Jane_Doe > Settings... and hit "Save Settings"
-- Either
+- Either:
 - - Select several text layers
+- - Data > Jane_Doe
+- Or:
+- - Select several symbols that contain text overrides
+- - Click on the Data-Override icon in the override section
+- - Select Jane_Doe
