@@ -2,47 +2,65 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World</title>
+  <title>Settings</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <h1>Jane Doe - Settings</h1>
-
+  <p>Customize nationality and gender to match your needs and save those setting for later.</p>
+<br>
   <div>
-      <form>
-        <div>
-          <label for="region">Pick nationality</label>
-          <select id="region_select">
-            <option value="random">🔮 Random</option>
-            <option value="austria">🇦🇹 Austria</option>
-            <option value="belgium">🇧🇪 Belgium</option>
-            <option value="estonia">🇪🇪 Estonia</option>
-            <option value="france">🇫🇷 France</option>
-            <option value="germany">🇩🇪 Germany</option>
-            <option value="greece">🇬🇷 Greece</option>
-            <option value="india">🇮🇳 India</option>
-            <option value="israel">🇮🇱 Israel</option>
-            <option value="korea">🇰🇷 Korea</option>
-            <option value="spain">🇪🇸 Spain</option>
-            <option value="switzerland">🇨🇭 Switzerland</option>
-            <option value="ukraine">🇺🇦 Ukraine</option>
-            <option value="england">🇬🇧 United Kingdom</option>
-            <option value="united states">🇺🇸 United States</option>
-          </select>
-        </div>
-        <div></div>
-          <label for="gender">Choose gender</label>
-          <select id="gender_select">
-            <option value="female">👩 Female</option>
-            <option value="male">👨 Male</option>
-            <option value="both">👩👨 Female and Male</option>
-          </select>
-        </div>
-      </form>
-  </div>
-  
-  <div>
-    <button id="button">Save Settings</button>
+      <table>
+          <tr>
+            <td>
+              <label for="region">Nationality</label>
+            </td>
+            <td>
+              <div class="select">
+                <select id="region_select" width="2em">
+                  <option value="random">🔮 Random</option>
+                  <option value="austria">🇦🇹 Austria</option>
+                  <option value="belgium">🇧🇪 Belgium</option>
+                  <option value="estonia">🇪🇪 Estonia</option>
+                  <option value="france">🇫🇷 France</option>
+                  <option value="germany">🇩🇪 Germany</option>
+                  <option value="greece">🇬🇷 Greece</option>
+                  <option value="india">🇮🇳 India</option>
+                  <option value="israel">🇮🇱 Israel</option>
+                  <option value="korea">🇰🇷 Korea</option>
+                  <option value="spain">🇪🇸 Spain</option>
+                  <option value="switzerland">🇨🇭 Switzerland</option>
+                  <option value="ukraine">🇺🇦 Ukraine</option>
+                  <option value="england">🇬🇧 United Kingdom</option>
+                  <option value="united states">🇺🇸 United States</option>
+                </select>
+                <div class="select_arrow"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="gender">Gender</label>
+            </td>
+            <td>
+              <div class="select">
+                <select id="gender_select" width="100%">
+                  <option value="female">👩 Female</option>
+                  <option value="male">👨 Male</option>
+                  <option value="both">👩👨 Female and Male</option>
+                </select>
+                <div class="select_arrow"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              &nbsp;
+            </td>
+            <td>
+              <button id="button">Save Settings</button>
+            </td>
+          </tr>
+        </table>
   </div>
   <div id="answer"></div>
 

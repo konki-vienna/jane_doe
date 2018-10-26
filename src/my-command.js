@@ -1,4 +1,5 @@
 const sketch = require('sketch')
+const UI = require('sketch/ui')
 const { DataSupplier } = sketch
 const util = require('util')
 var Settings = require('sketch/settings')
@@ -73,18 +74,23 @@ export function getNames(myContext, myAmount) {
   let dataKey = myContext.data.key
   const items = util.toArray(myContext.data.items).map(sketch.fromNative)
 
+  UI.message("🔦 Looking for localized names on uinames.com... 🔦")
+
   fetch(url)
     .then((resp) => resp.json()) // Transform the data into json
     .then(function(data) {
       let index = 0;
-      return data.map(function(userName) {
-        log(userName);
-        let name = (userName.name + " " + userName.surname)
+      log(data[0].region)
+      UI.message("✅ Retrieved " + data.length + " localized name(s) from " + data[0].region +  " ✅")
+      return data.map(function(response) {
+        log(response);
+        let name = (response.name + " " + response.surname)
         DataSupplier.supplyDataAtIndex(dataKey, name, index)
         index++
-      })      
+      })
   })
   .catch(function(error) {
+    UI.message("❌ Something went wrong - is the WIX-GUEST WLAN down again? 😉 ❌")
     log(error);
   });
 }

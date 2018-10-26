@@ -7,13 +7,14 @@ export default function (context) {
 
     const options = {
       identifier: 'jane_doe_unique.id',
-      width: 320,
-      height: 240,
-      minWidth: 320,
-      minHeight: 240,
+      width: 420,
+      height: 340,
+      minWidth: 420,
+      minHeight: 340,
       //backgroundColor: "#FF0000",
       alwaysOnTop: true,
-      show: true
+      show: true,
+      title: "Settings"
     }
 
     var browserWindow = new BrowserWindow(options)

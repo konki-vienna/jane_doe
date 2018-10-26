@@ -9,16 +9,119 @@ html {
 
   /* Force the default cursor, even on text */
   cursor: default;
+
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px
 }
 
 h1 { 
   display: block;
-  font-size: 2em;
+  font-size: 1.6em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  border: 1px red;
+}
+
+table {
+  width: 100%;
+}
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+label {
+  color: #000000;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  background: #2075ff;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+  border-radius:32px;
+  border: 1px solid #2075ff;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+	padding: 14px 15px;
+  text-decoration:none;
+}
+
+button:hover {
+  border:1px solid #2075ff;
+  background: white;
+  color: #2075ff;
+}
+
+button:active {
+  border:1px solid #204CFF;
+  background: #204CFF;
+  color: white;
+}
+
+/*select {
+  width: 100%;
+}*/
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}    .select select {
+
+	    font-size:20px;
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 15px;
+      outline: 0;
+      border: 1px solid #2075ff;
+      border-radius: 32px;
+      background: #ffffff;
+      color: #000000;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+      .select select::-ms-expand {
+          display: none;
+      }
+      .select select:hover,
+      .select select:focus {
+          color: #2075ff;
+          background: #FFF;
+      }
+      .select select:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+      }
+.select_arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 0px;
+  height: 0px;
+  border: solid #2075ff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #2075ff;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
 }
 
 *, *:before, *:after {

@@ -20,7 +20,10 @@
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.5.2"
+    "@skpm/builder": "^0.5.10",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.1"
   },
   "author": "Adi Berda and Konstantin Demblin <konstantin.demblin@gmail.com>",
   "dependencies": {
