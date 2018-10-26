@@ -13,3 +13,6 @@ This Sketch Plugin enables you to use localized user names within your design fi
 - - Select several symbols that contain text overrides
 - - Click on the Data-Override icon in the override section
 - - Select Jane_Doe
+
+### Credits
+This plugin was developed during the Design Tools Hackathon 2018 (https://www.designtoolstlv.com/) by Adi Berda and Konstantin Demblin
