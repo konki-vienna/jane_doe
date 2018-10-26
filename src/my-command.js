@@ -80,17 +80,22 @@ export function getNames(myContext, myAmount) {
     .then((resp) => resp.json()) // Transform the data into json
     .then(function(data) {
       let index = 0;
-      log(data[0].region)
-      UI.message("✅ Retrieved " + data.length + " localized name(s) from " + data[0].region +  " ✅")
-      return data.map(function(response) {
-        log(response);
-        let name = (response.name + " " + response.surname)
-        DataSupplier.supplyDataAtIndex(dataKey, name, index)
-        index++
-      })
+      //log(data.length)
+      //WEIRD BUG IF data.length = undefined (BECAUSE ONLY A SINGLE ELEMENT IS SELECTED)
+      if (data.length == undefined) {
+        UI.message("❌ Please select more than one element. ❌")
+      } else {
+        UI.message("✅ Retrieved " + data.length + " localized name from " + data[0].region +  ". ✅")
+        return data.map(function(response) {
+          log(response);
+          let name = (response.name + " " + response.surname)
+          DataSupplier.supplyDataAtIndex(dataKey, name, index)
+          index++
+        })
+      }
   })
   .catch(function(error) {
-    UI.message("❌ Something went wrong - is the WIX-GUEST WLAN down again? 😉 ❌")
+    UI.message("❌ Something went wrong - has the WIX-GUEST WLAN disconnected you again? 😉 ❌")
     log(error);
   });
 }
