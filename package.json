@@ -13,6 +13,9 @@
       "assets/**/*"
     ]
   },
+  "repository": {
+    "url": "https://github.com/konki-vienna/jane_doe"
+  },
   "scripts": {
     "build": "skpm-build",
     "watch": "skpm-build --watch",
