@@ -4,6 +4,7 @@ This Sketch Plugin enables you to use localized user names within your design fi
 (Powered by uinames.com)
 
 ## How to use it
+![How to](https://github.com/konki-vienna/jane_doe/raw/master/Material/HowTo.gif)
 - Download and install the plugin (https://github.com/konki-vienna/jane_doe/releases/)
 - Adapt the settings (region and gender) of the plugin through Plugins > Jane_Doe > Settings... and hit "Save Settings"
 - Either:
