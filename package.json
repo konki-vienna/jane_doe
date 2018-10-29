@@ -1,6 +1,6 @@
 {
   "name": "jane_doe",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A DataSupplier plugin",
   "engines": {
     "sketch": ">=3.0"
