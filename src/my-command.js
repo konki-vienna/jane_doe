@@ -95,7 +95,7 @@ export function getNames(myContext, myAmount) {
       }
   })
   .catch(function(error) {
-    UI.message("❌ Something went wrong - has the WIX-GUEST WLAN disconnected you again? 😉 ❌")
+    UI.message("❌ Something went wrong - maybe you are offline? ❌")
     log(error);
   });
 }
