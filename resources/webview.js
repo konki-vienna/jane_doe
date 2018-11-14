@@ -11,7 +11,8 @@ document.getElementById('button').addEventListener('click', function () {
 })
 
 document.getElementById('region_select').addEventListener('onchange', function () {
-  console.log("Region changed to: ")
+  console.log("here - region_select")
+  
 })
 
 // called from the plugin
