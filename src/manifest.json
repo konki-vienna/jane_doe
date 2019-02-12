@@ -19,7 +19,8 @@
       "identifier" : "settings_identifier",
       "shortcut" : "",
       "script" : "ui.js",
-      "description" : "Lets the user customize localization parameters"
+      "description" : "Lets the user customize localization parameters",
+      "icon" : "settings.png"
     }
   ],
   "menu": {
