@@ -29,11 +29,12 @@
     "type": "git",
     "url": "https://github.com/konki-vienna/jane_doe.git"
   },
+  "license": "MIT",
   "author": "Adi Berda and Konstantin Demblin <konstantin.demblin@gmail.com>",
   "dependencies": {
+    "sketch-module-google-analytics": "^0.1.4",
     "sketch-module-web-view": "^2.0.1"
   },
-  "license": "MIT",
   "resources": [
     "resources/**/*.js"
   ]

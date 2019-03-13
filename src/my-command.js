@@ -1,8 +1,12 @@
+import myGoogleAnalytics from 'sketch-module-google-analytics';
+myGoogleAnalytics.kUUIDKey = "UA-136184373-1"
+
 const sketch = require('sketch')
 const UI = require('sketch/ui')
 const { DataSupplier } = sketch
 const util = require('util')
 var Settings = require('sketch/settings')
+export var debugMode = false
 
 export function onStartup () {
   // To register the plugin, uncomment the relevant type:
@@ -59,7 +63,12 @@ function getGender() {
 export function getNames(myContext, myAmount) {
   let tmp_gender = getGender()
   let tmp_region = getRegion()
-  log("OnSupplyData! - Values to look for: " + tmp_gender + ", " + tmp_region)
+  if (debugMode) {
+    log("OnSupplyData! - Values to look for: " + tmp_gender + ", " + tmp_region)
+  } else {
+    //TODO:
+    
+  }
 
   //let url = "https://uinames.com/api/?amount=" + myAmount + "&gender=" + myGender + "&region=" + myRegion;
   let url = "https://uinames.com/api/?amount=" + myAmount
@@ -86,8 +95,13 @@ export function getNames(myContext, myAmount) {
         UI.message("❌ Please select more than one element. ❌")
       } else {
         UI.message("✅ Retrieved " + data.length + " localized name from " + data[0].region +  ". ✅")
+        if (!debugMode) {
+          googleAnalytics(context,"DataUpdated", "DataUpdated")
+        }
         return data.map(function(response) {
-          log(response);
+          if (debugMode) {
+            log(response);
+          }
           let name = (response.name + " " + response.surname)
           DataSupplier.supplyDataAtIndex(dataKey, name, index)
           index++
@@ -96,10 +110,59 @@ export function getNames(myContext, myAmount) {
   })
   .catch(function(error) {
     UI.message("❌ Something went wrong - maybe you are offline? ❌")
-    log(error);
+    if (debugMode) {
+      log(error);
+    }
   });
 }
 
-export function onSettings(context) {
-  log("SETTINGS CALLED!!!")
+
+/*-----------------------------------
+//GOOGLE ANALYTICS - START
+-----------------------------------*/
+export function googleAnalytics(context,category,action,label,value) {
+	var trackingID = "UA-134337717-1",
+		uuidKey = "google.analytics.uuid",
+		uuid = NSUserDefaults.standardUserDefaults().objectForKey(uuidKey);
+
+	if (!uuid) {
+		uuid = NSUUID.UUID().UUIDString();
+		NSUserDefaults.standardUserDefaults().setObject_forKey(uuid,uuidKey);
+	}
+
+	var url = "https://www.google-analytics.com/collect?v=1";
+	// Tracking ID
+	url += "&tid=" + trackingID;
+	// Source
+	url += "&ds=sketch" + MSApplicationMetadata.metadata().appVersion;
+	// Client ID
+	url += "&cid=" + uuid;
+	// pageview, screenview, event, transaction, item, social, exception, timing
+	url += "&t=event";
+	// App Name
+	url += "&an=" + encodeURI(context.plugin.name());
+	// App ID
+	url += "&aid=" + context.plugin.identifier();
+	// App Version
+	url += "&av=" + context.plugin.version();
+	// Event category
+	url += "&ec=" + encodeURI(category);
+	// Event action
+	url += "&ea=" + encodeURI(action);
+	// Event label
+	if (label) {
+		url += "&el=" + encodeURI(label);
+	}
+	// Event value
+	if (value) {
+		url += "&ev=" + encodeURI(value);
+	}
+
+	var session = NSURLSession.sharedSession(),
+		task = session.dataTaskWithURL(NSURL.URLWithString(NSString.stringWithString(url)));
+
+	task.resume();
 }
+/*-----------------------------------
+//GOOGLE ANALYTICS - END
+-----------------------------------*/
