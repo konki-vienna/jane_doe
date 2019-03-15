@@ -6,7 +6,7 @@ const UI = require('sketch/ui')
 const { DataSupplier } = sketch
 const util = require('util')
 var Settings = require('sketch/settings')
-export var debugMode = false
+export var debugMode = true
 
 export function onStartup () {
   // To register the plugin, uncomment the relevant type:
@@ -61,14 +61,14 @@ function getGender() {
 }
 
 export function getNames(myContext, myAmount) {
-  let tmp_gender = getGender()
-  let tmp_region = getRegion()
   if (debugMode) {
     log("OnSupplyData! - Values to look for: " + tmp_gender + ", " + tmp_region)
   } else {
-    //TODO:
-    
+    //TODO:    
   }
+  let tmp_gender = getGender()
+  let tmp_region = getRegion()
+  
 
   //let url = "https://uinames.com/api/?amount=" + myAmount + "&gender=" + myGender + "&region=" + myRegion;
   let url = "https://uinames.com/api/?amount=" + myAmount
