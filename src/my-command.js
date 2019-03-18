@@ -121,7 +121,7 @@ export function getNames(myContext, myAmount) {
 //GOOGLE ANALYTICS - START
 -----------------------------------*/
 export function googleAnalytics(context,category,action,label,value) {
-	var trackingID = "UA-134337717-1",
+	var trackingID = "UA-136184373-1",
 		uuidKey = "google.analytics.uuid",
 		uuid = NSUserDefaults.standardUserDefaults().objectForKey(uuidKey);
 
